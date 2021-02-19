@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #this font is inside ~/.fonts/ dir and downloaded from https://github.com/supermarin/YosemiteSanFranciscoFont added
-font pango:System San Francisco Display 9
+font pango:System San Francisco Display mono 9, FontAwesome5Free , FontAwesome5Brands 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -119,15 +119,15 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 # the icons are from fontawesome and is inside ~./fonts added 
 set $ws1 "1:"
-set $ws2 "2:>_"
-set $ws3 "3"
+set $ws2 "2:"
+set $ws3 "3:"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -169,10 +169,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #script of shutting down , restarting or logging out of X session added
-#bindsym $mod+shift+e exec --no-startup-id  ~/scripts/exit.sh
+bindsym $mod+shift+e exec --no-startup-id  ~/scripts/exit.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -220,12 +220,13 @@ bindsym $mod+r mode "resize"
 bar {
 	#i3status is in /etc/i3status.conf
 	tray_output primary
+	font pango: System San Francisco Display , FontAwesome5Free, mono 10
 	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 #	height 5
 	position top 
 		colors {
 		background $bg-color
-	    	separator #757575
+		separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
