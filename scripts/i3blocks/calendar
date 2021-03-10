@@ -33,7 +33,7 @@ case "$BLOCK_BUTTON" in
         --width=$WIDTH --height=$HEIGHT \
 	    --undecorated --fixed \
 	    --close-on-unfocus --no-buttons \
-	    --posx=1620 --posy=20 \
+	    --posx=1580 --posy=20 \
 	    > /dev/null"
 esac
 echo "$LABEL$(date "$DATEFMT")"

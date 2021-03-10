@@ -1,15 +1,18 @@
 #!/bin/sh
 
-choice=$(echo "Shutdown\nReboot\nExit" | dmenu -i -p "Choose action: ") 
+choice=$(echo "Shutdown\nReboot\nSuspend\nLogout" | dmenu -i -p "Choose action: ") 
 #echo $choice | dmenu
 if [ $choice = "Shutdown" ];
 then
 #systemctl poweroff
-shutdown -h now
+	shutdown -h now
 elif [ $choice = "Reboot" ];
 then
-shutdown -r now
+	shutdown -r now
+elif [ $choice = "Suspend" ];
+then
+	systemctl suspend
 elif [ $choice = "Exit" ];
 then
-i3-msg exit
+	i3-msg exit
 fi

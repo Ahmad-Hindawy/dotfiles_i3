@@ -230,7 +230,7 @@ bar {
 	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 #	height 5
 	position top 
-		colors {
+	colors {
 		background $bg-color
 		separator #757575
 		#                  border             background         text
@@ -240,7 +240,7 @@ bar {
 	}
 }
 
-bindsym $mod+shift+x exec i3lock -i ~/scripts/background_geralt.png
+bindsym $mod+shift+x exec i3lock -i ~/scripts/backgrounds/background_geralt.png
 #cycling through the langs using the script downloaded from https://github.com/porras/i3-keyboard-layout
 #bindsym $mod+space exec /home/hindawy/i3_apps/i3-keyboard-layout cycle us ara
 
@@ -248,7 +248,8 @@ bindsym $mod+shift+x exec i3lock -i ~/scripts/background_geralt.png
 exec_always "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_shift_toggle"
 
 #setting the wallpaper added
-exec_always feh --bg-scale ~/scripts/background_geralt.png
+#exec_always feh --bg-scale ~/scripts/backgrounds/background_geralt.png
+exec_always feh --bg-scale ~/scripts/backgrounds/ismail-inceoglu-chaos-invoked.jpg
 
 #starting a terminal on workspace 2 , not assigned so i can use the terminal in any other window added
 #a simple hack until the byndsym of workspaces line is understood:
