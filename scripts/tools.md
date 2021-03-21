@@ -7,7 +7,7 @@ When ever i install a useful tool i'll add it or the link if needed.
 
 | Tool              | Description |
 | --------------    | ---------------------------------------------------------- |
-| i3 			    | window manager( the i3-gaps fork from regolith-linux ppa) |
+| i3 			    | window manager [(the i3-gaps fork from regolith-linux ppa)](https://launchpad.net/~regolith-linux/+archive/ubuntu/stable) |
 | i3blocks 		    |status blocks for i3bar|
 | dunst			    |notification manager |
 | nano 			    |editor|
@@ -36,3 +36,5 @@ When ever i install a useful tool i'll add it or the link if needed.
 | transmition		| a torrent client|
 | vlc			    | media player|
 | virtualbox		| virtual machines|
+
+

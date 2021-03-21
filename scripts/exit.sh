@@ -12,7 +12,7 @@ then
 elif [ $choice = "Suspend" ];
 then
 	systemctl suspend
-elif [ $choice = "Exit" ];
+elif [ $choice = "Logout" ];
 then
 	i3-msg exit
 fi

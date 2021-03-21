@@ -249,7 +249,7 @@ exec_always "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_s
 
 #setting the wallpaper added
 #exec_always feh --bg-scale ~/scripts/backgrounds/background_geralt.png
-exec_always feh --bg-scale ~/scripts/backgrounds/ismail-inceoglu-chaos-invoked.jpg
+exec_always feh --bg-scale ~/scripts/backgrounds/002.jpg
 
 #starting a terminal on workspace 2 , not assigned so i can use the terminal in any other window added
 #a simple hack until the byndsym of workspaces line is understood:
@@ -265,8 +265,14 @@ bindsym --release Print exec maim -s | xclip -selection clipboard -t image/png
 #assigning mod + printscreen to save the selected area(or window ) to ~/Pictures with the current date added
 bindsym --release $mod+Print exec maim -s ~/Pictures/$(date +%d%m%y).png
 
-#assigning mod+shift+b to open chromium
+#assigning mod+shift+b to open chromium added
 bindsym --release $mod+shift+b exec chromium-browser
+
+#assigning mod+shift+b to mount drives added
+bindsym --release $mod+shift+m exec ~/scripts/drives.sh
+
+#assigning mod+shift+b to mount drives added
+bindsym --release $mod+shift+t exec ~/scripts/todo
 
 #assigning mod+shift+f to open ranger file manager
 #bindsym --release $mod+shift+f exec i3-msg 'workspace $ws4; exec ranger;'
@@ -281,4 +287,5 @@ gaps outer 5
 
 #activate smart gaps options: enable apps only when there are more than one container
 smart_gaps on
+
 
