@@ -36,5 +36,5 @@ When ever i install a useful tool i'll add it or the link if needed.
 | transmition		| a torrent client|
 | vlc			    | media player|
 | virtualbox		| virtual machines|
-
-
+| tldr			| examples from man page|
+| lm-sensors		| reads sensors data such as temperature|

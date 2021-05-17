@@ -1,4 +1,4 @@
-# Dotfile_i3
+# Dotfiles_i3
 ## Introduction
 This repository contains the dotfiles and scripts used to configure i3wm and other software used in my linux system.
 
