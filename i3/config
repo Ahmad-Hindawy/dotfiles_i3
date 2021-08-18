@@ -206,18 +206,19 @@ mode "resize" {
 }
 
 
-set $bg-color	         #2f343f
-set $inactive-bg-color   #2f343f
+set $bg-color	         #0A131D
+set $inactive-bg-color   #0A131D
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+set $border-color	 #36c7cf
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+#                       border              background          text                 indicator
+client.focused          $bg-color           $border-color       $text-color          #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color          #00ff00
 
 bindsym $mod+r mode "resize"
 
@@ -249,12 +250,12 @@ exec_always "setxkbmap -model pc104 -layout us,ara -variant ,, -option grp:alt_s
 
 #setting the wallpaper added
 #exec_always feh --bg-scale ~/scripts/backgrounds/background_geralt.png
-exec_always feh --bg-scale ~/scripts/backgrounds/002.jpg
+exec_always feh --bg-scale ~/scripts/backgrounds/001.jpg
 
 #starting a terminal on workspace 2 , not assigned so i can use the terminal in any other window added
 #a simple hack until the byndsym of workspaces line is understood:
 #https://github.com/tyjak/archlinux/blob/master/.config/i3/config
-exec --no-startup-id i3-msg 'workspace $ws2; exec gnome-terminal;'
+exec --no-startup-id i3-msg 'workspace $ws2; exec gnome-terminal; workspace $ws1;'
 
 #starting the network manager in tray
 exec --no-startup-id nm-applet
@@ -268,18 +269,21 @@ bindsym --release $mod+Print exec maim -s ~/Pictures/$(date +%S%M%d%m%y).png
 #assigning mod+shift+b to open chromium added
 bindsym --release $mod+shift+b exec chromium-browser
 
-#assigning mod+shift+b to mount drives added
+#assigning mod+shift+m to mount drives added
 bindsym --release $mod+shift+m exec sudo ~/scripts/drives.sh
 
-#assigning mod+shift+b to use the todo script added
+#assigning mod+shift+t to use the todo script added
 bindsym --release $mod+shift+t exec ~/scripts/todo
+
+#assigning mod+m to open rhythmbox
+bindsym --release $mod+m exec rhythmbox
 
 #assigning mod+shift+f to open ranger file manager
 #bindsym --release $mod+shift+f exec i3-msg 'workspace $ws4; exec ranger;'
 
 #installed the regolith-linux/stable ppa then installed i3-gaps
-#removing the borders of all windows
-for_window [class=".*"] border pixel 0
+#setting the border size of all windows
+for_window [class=".*"] border pixel 2
 
 #detrming the gaps in pixels
 gaps inner 20
@@ -288,4 +292,5 @@ gaps outer 5
 #activate smart gaps options: enable apps only when there are more than one container
 smart_gaps on
 
-
+#activate smart borders: enables borders only when there are more than one container
+smart_borders on

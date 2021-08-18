@@ -38,3 +38,4 @@ When ever i install a useful tool i'll add it or the link if needed.
 | virtualbox		| virtual machines|
 | tldr			| examples from man page|
 | lm-sensors		| reads sensors data such as temperature|
+| calibre		| A GUI program to read epub, azw3 and pdf ( and also provide conversion utilities)|
