@@ -28,9 +28,10 @@ then
                 sudo umount /dev/$selected
                 grep -qs /media/hindawy/$selected /proc/mounts || sudo rm -rf /media/hindawy/$selected
         else
-                [ ! -d /media/hindawy/$selected ] && sudo mkdir /media/hindawy/$selected 
-                sudo mount -o uid=$uid,gid=$gid /dev/$selected /media/hindawy/$selected && exit 0
-        fi
+                [ ! -d /media/hindawy/$selected ] && sudo mkdir /media/hindawy/$selected && 
+                sudo mount -o uid=$uid,gid=$gid /dev/$selected /media/hindawy/$selected &&
+		sudo chown -R hindawy:hindawy /media/hindawy/$selected && exit 0
+	fi
 
 
 else
